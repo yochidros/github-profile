@@ -14,3 +14,7 @@ USAGE:
 For more information try --help
 ```
 
+# License
+
+The code in github-profile follows MIT license texted in [LICENSE](./LICENSE).
+Contributors need to agree that any modifications sent in this repository follow the license.
