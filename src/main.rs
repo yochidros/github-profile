@@ -15,7 +15,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let args = Args::parse();
     let name: String = args.name;
-    let user = fetch_user(name).await?;
+    let token: String = args.token;
+    let user = fetch_user(name, token).await?;
     print_userinfo(user);
 
     Ok(())

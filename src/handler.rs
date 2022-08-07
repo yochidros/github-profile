@@ -1,5 +1,3 @@
-use std::env;
-
 use reqwest::header;
 use reqwest::header::HeaderValue;
 
@@ -22,8 +20,10 @@ impl GithubHeader {
     }
 }
 
-pub async fn fetch_user(name: String) -> Result<GithubUser, Box<dyn std::error::Error>> {
-    let token = env::var("GITHUB_ACCESS_TOKEN").expect("GITHUB_ACCESS_TOKEN must be set");
+pub async fn fetch_user(
+    name: String,
+    token: String,
+) -> Result<GithubUser, Box<dyn std::error::Error>> {
     let client = reqwest::Client::builder()
         .default_headers(GithubHeader::new_header_map())
         .build()?;
